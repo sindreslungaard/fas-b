@@ -1,14 +1,18 @@
 export interface Prefab {
-    state: any;
-    didJustUpdate: boolean;
-    children: Prefab[];
+    uniqueId: string;
+    html(): string;
 }
 
-export interface PrefabFactory {
-    new (
-        prefab: Prefab,
-        options: {
-            temp?: string;
-        }
-    );
-}
+export const prefab = (
+    uniqueId: string,
+    options: {
+        html(): string;
+        mounted?();
+        update?();
+    }
+): Prefab => {
+    return {
+        uniqueId,
+        ...options,
+    };
+};
