@@ -1,0 +1,27 @@
+{
+    "name": "fas-b",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "build": "esbuild lib/index.ts --minify --bundle --target=chrome58,firefox57,safari11,edge16 --format=esm --outfile=out/index.js && tsc --emitDeclarationOnly --outDir out"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindreslungaard/fas-b.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sindreslungaard/fas-b/issues"
+    },
+    "homepage": "https://github.com/sindreslungaard/fas-b#readme",
+    "devDependencies": {
+        "esbuild": "^0.14.1",
+        "typescript": "^4.5.2"
+    }
+}
