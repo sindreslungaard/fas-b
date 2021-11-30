@@ -1,9 +1,10 @@
-interface Prefab {
-    applyStyle(string);
-    render(): string;
+export interface Prefab {
+    state: any;
+    didJustUpdate: boolean;
+    children: Prefab[];
 }
 
-interface PrefabFactory {
+export interface PrefabFactory {
     new (
         prefab: Prefab,
         options: {
